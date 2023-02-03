@@ -8,4 +8,10 @@ class StyleConstant {
     fontSize: 50,
     color: ColorConstant.black,
   );
+
+  static TextStyle messageTextStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 30,
+    color: ColorConstant.black,
+  );
 }

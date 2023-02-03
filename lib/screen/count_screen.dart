@@ -12,8 +12,16 @@ class CountScreen extends StatefulWidget {
 
 class _CountScreenState extends State<CountScreen> {
   int counter = 0;
+  String message = '';
 
   void _incrementCounter() {
+    if (counter % 10 == 9) {
+      print('ありがとう');
+      message = 'ありがとう';
+    } else {
+      message = '';
+    }
+
     setState(() {
       counter++;
     });
@@ -28,12 +36,12 @@ class _CountScreenState extends State<CountScreen> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Text(
-              '$counter',
-              style: StyleConstant.countTextStyle,
-            ),
+            const Spacer(),
+            Text('$counter', style: StyleConstant.countTextStyle),
+            const SizedBox(height: 20),
+            Text(message, style: StyleConstant.messageTextStyle),
+            const Spacer(),
             SizedBox(
               width: context.screenWidth / 3.5,
               height: context.screenWidth / 3.5,
@@ -46,6 +54,7 @@ class _CountScreenState extends State<CountScreen> {
                 },
               ),
             ),
+            const Spacer(),
           ],
         ),
       ),
