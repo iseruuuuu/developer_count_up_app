@@ -32,21 +32,21 @@ class _CountScreenState extends State<CountScreen> {
   void checkColor() async {
     counter = await Preference().getInt(PreferenceKey.counter);
     //TODO switch文を使う。
-    if (counter >= 10) {
+    if (counter >= 10 && counter <= 200) {
       rankColor = ColorConstant.grey;
-    } else if (counter >= 200) {
+    } else if (counter >= 200 && counter <= 300) {
       rankColor = ColorConstant.brown;
-    } else if (counter >= 300) {
+    } else if (counter >= 300 && counter <= 300) {
       rankColor = ColorConstant.green;
-    } else if (counter >= 400) {
+    } else if (counter >= 400 && counter <= 300) {
       rankColor = ColorConstant.lightBlue;
-    } else if (counter >= 1200) {
+    } else if (counter >= 1200 && counter <= 300) {
       rankColor = ColorConstant.blue;
-    } else if (counter >= 1500) {
+    } else if (counter >= 1500 && counter <= 300) {
       rankColor = ColorConstant.yellow;
-    } else if (counter >= 1800) {
+    } else if (counter >= 1800 && counter <= 300) {
       rankColor = ColorConstant.orange;
-    } else if (counter >= 2000) {
+    } else if (counter >= 2000 && counter <= 300) {
       rankColor = ColorConstant.red;
     } else {
       rankColor = ColorConstant.black;
