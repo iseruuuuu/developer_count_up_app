@@ -65,6 +65,7 @@ class _CountScreenState extends State<CountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstant.backgroundColor,
       appBar: AppBar(
         backgroundColor: rankColor,
         elevation: 0,
