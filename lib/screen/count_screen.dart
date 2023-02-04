@@ -75,6 +75,7 @@ class _CountScreenState extends State<CountScreen> {
                   MaterialPageRoute(
                     builder: (context) => RankScreen(
                       rankColor: rankColor,
+                      counter: counter,
                     ),
                   ),
                 );

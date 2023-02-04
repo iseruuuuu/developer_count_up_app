@@ -14,4 +14,10 @@ class StyleConstant {
     fontSize: 30,
     color: ColorConstant.black,
   );
+
+  static TextStyle rankLabel = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 25,
+    color: ColorConstant.black,
+  );
 }
