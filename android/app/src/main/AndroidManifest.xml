@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.developer_count_up_app">
    <application
-        android:label="developer_count_up_app"
+        android:label="Atcounter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
