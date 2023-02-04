@@ -62,24 +62,27 @@ class _CountScreenState extends State<CountScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstant.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: rankColor,
-        elevation: 0,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => RankScreen(
-                    rankColor: rankColor,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(50),
+        child: AppBar(
+          backgroundColor: rankColor,
+          elevation: 0,
+          actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RankScreen(
+                      rankColor: rankColor,
+                    ),
                   ),
-                ),
-              );
-            },
-            icon: const Icon(Icons.question_mark),
-          ),
-        ],
+                );
+              },
+              icon: const Icon(Icons.question_mark),
+            ),
+          ],
+        ),
       ),
       body: Center(
         child: Column(
@@ -100,6 +103,10 @@ class _CountScreenState extends State<CountScreen> {
               ),
             ),
             const Spacer(),
+            SizedBox(
+              height: 100,
+              child: AppBar(backgroundColor: rankColor),
+            ),
           ],
         ),
       ),
