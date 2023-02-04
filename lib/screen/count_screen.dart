@@ -14,7 +14,6 @@ class CountScreen extends StatefulWidget {
 
 class _CountScreenState extends State<CountScreen> {
   int counter = 0;
-  String message = '';
   Color rankColor = ColorConstant.black;
 
   @override
@@ -24,11 +23,6 @@ class _CountScreenState extends State<CountScreen> {
   }
 
   void _incrementCounter() {
-    if (counter % 10 == 9) {
-      message = 'ありがとう';
-    } else {
-      message = '';
-    }
     counter++;
     checkColor();
     setPreference();
@@ -37,13 +31,14 @@ class _CountScreenState extends State<CountScreen> {
 
   void checkColor() async {
     counter = await Preference().getInt(PreferenceKey.counter);
+    //TODO switch文を使う。
     if (counter >= 10) {
       rankColor = ColorConstant.grey;
-    } else if (counter >= 300) {
+    } else if (counter >= 200) {
       rankColor = ColorConstant.brown;
-    } else if (counter >= 600) {
+    } else if (counter >= 300) {
       rankColor = ColorConstant.green;
-    } else if (counter >= 900) {
+    } else if (counter >= 400) {
       rankColor = ColorConstant.lightBlue;
     } else if (counter >= 1200) {
       rankColor = ColorConstant.blue;
@@ -82,7 +77,7 @@ class _CountScreenState extends State<CountScreen> {
                 ),
               );
             },
-            icon: Icon(Icons.question_mark),
+            icon: const Icon(Icons.question_mark),
           ),
         ],
       ),
@@ -91,8 +86,6 @@ class _CountScreenState extends State<CountScreen> {
           children: <Widget>[
             const Spacer(),
             Text('$counter', style: StyleConstant.countTextStyle),
-            const SizedBox(height: 20),
-            Text(message, style: StyleConstant.messageTextStyle),
             const Spacer(),
             SizedBox(
               width: context.screenWidth / 3.5,

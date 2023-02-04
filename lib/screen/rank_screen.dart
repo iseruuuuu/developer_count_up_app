@@ -20,6 +20,7 @@ class RankScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
+          //TODO デザインを一新する。
           const Text('ランク表'),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
