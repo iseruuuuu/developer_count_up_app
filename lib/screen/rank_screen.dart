@@ -1,6 +1,7 @@
 import 'package:developer_count_up_app/component/color_container.dart';
 import 'package:developer_count_up_app/constants/color_constant.dart';
 import 'package:developer_count_up_app/constants/style_constant.dart';
+import 'package:developer_count_up_app/extension/check_rank.dart';
 import 'package:flutter/material.dart';
 
 class RankScreen extends StatelessWidget {
@@ -61,8 +62,7 @@ class RankScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: Text(
-              //TODO ランクの計算をする
-              '次のランクまであと${counter - 0}',
+              context.checkRank(counter),
               style: StyleConstant.rankLabel,
             ),
           ),
