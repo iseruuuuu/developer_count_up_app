@@ -2,6 +2,7 @@ import 'package:developer_count_up_app/constants/color_constant.dart';
 import 'package:developer_count_up_app/constants/style_constant.dart';
 import 'package:developer_count_up_app/extension/deviceSize.dart';
 import 'package:developer_count_up_app/preference/shared_preference.dart';
+import 'package:developer_count_up_app/screen/rank_screen.dart';
 import 'package:flutter/material.dart';
 
 class CountScreen extends StatefulWidget {
@@ -69,6 +70,21 @@ class _CountScreenState extends State<CountScreen> {
       appBar: AppBar(
         backgroundColor: rankColor,
         elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => RankScreen(
+                    rankColor: rankColor,
+                  ),
+                ),
+              );
+            },
+            icon: Icon(Icons.question_mark),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
