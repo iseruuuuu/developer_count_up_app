@@ -1,18 +1,23 @@
+// Flutter imports:
 import 'package:developer_count_up_app/constants/color_constant.dart';
-import 'package:developer_count_up_app/constants/style_constant.dart';
-import 'package:developer_count_up_app/extension/deviceSize.dart';
 import 'package:developer_count_up_app/preference/shared_preference.dart';
+import 'package:developer_count_up_app/screen/count_screen.dart';
 import 'package:developer_count_up_app/screen/rank_screen.dart';
 import 'package:flutter/material.dart';
 
-class CountScreen extends StatefulWidget {
-  const CountScreen({Key? key}) : super(key: key);
+// Package imports:
+
+// Project imports:
+
+class TabScreen extends StatefulWidget {
+  const TabScreen({Key? key}) : super(key: key);
 
   @override
-  State<CountScreen> createState() => _CountScreenState();
+  State<TabScreen> createState() => _TabScreenState();
 }
 
-class _CountScreenState extends State<CountScreen> {
+class _TabScreenState extends State<TabScreen> {
+  int selectedIndex = 0;
   int counter = 0;
   Color rankColor = ColorConstant.black;
 
@@ -22,10 +27,8 @@ class _CountScreenState extends State<CountScreen> {
     checkColor();
   }
 
-  void _incrementCounter() {
-    counter++;
-    checkColor();
-    setPreference();
+  void onTap(int index) {
+    selectedIndex = index;
     setState(() {});
   }
 
@@ -54,41 +57,41 @@ class _CountScreenState extends State<CountScreen> {
     setState(() {});
   }
 
-  void setPreference() {
-    Preference().setInt(PreferenceKey.counter, counter);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConstant.backgroundColor,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(50),
-        child: AppBar(
-          backgroundColor: rankColor,
-          elevation: 0,
-        ),
-      ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            const Spacer(),
-            Text('$counter', style: StyleConstant.countTextStyle),
-            const Spacer(),
-            SizedBox(
-              width: context.screenWidth / 2.5,
-              height: context.screenWidth / 2.5,
-              child: FloatingActionButton(
-                focusColor: rankColor,
-                backgroundColor: rankColor,
-                foregroundColor: rankColor,
-                onPressed: () {
-                  _incrementCounter();
-                },
-              ),
+      resizeToAvoidBottomInset: false,
+      body: [
+        const CountScreen(),
+        RankScreen(counter: counter, rankColor: rankColor),
+      ][selectedIndex],
+      bottomNavigationBar: DecoratedBox(
+        decoration: const BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              width: 0,
+              color: Colors.white,
             ),
-            const Spacer(),
+          ),
+        ),
+        child: BottomNavigationBar(
+          elevation: 0,
+          selectedItemColor: ColorConstant.black,
+          unselectedItemColor: ColorConstant.grey,
+          iconSize: 30,
+          currentIndex: selectedIndex,
+          onTap: onTap,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add_circle),
+              label: 'Counter',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet),
+              label: 'Check Rank',
+            ),
           ],
+          type: BottomNavigationBarType.fixed,
         ),
       ),
     );
