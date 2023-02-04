@@ -16,12 +16,10 @@ class _CountScreenState extends State<CountScreen> {
 
   void _incrementCounter() {
     if (counter % 10 == 9) {
-      print('ありがとう');
       message = 'ありがとう';
     } else {
       message = '';
     }
-
     setState(() {
       counter++;
     });
