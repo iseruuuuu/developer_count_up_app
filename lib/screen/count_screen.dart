@@ -88,8 +88,8 @@ class _CountScreenState extends State<CountScreen> {
             Text('$counter', style: StyleConstant.countTextStyle),
             const Spacer(),
             SizedBox(
-              width: context.screenWidth / 3.5,
-              height: context.screenWidth / 3.5,
+              width: context.screenWidth / 2.5,
+              height: context.screenWidth / 2.5,
               child: FloatingActionButton(
                 focusColor: rankColor,
                 backgroundColor: rankColor,
