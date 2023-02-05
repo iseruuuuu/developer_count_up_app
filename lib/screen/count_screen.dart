@@ -2,7 +2,6 @@ import 'package:developer_count_up_app/constants/color_constant.dart';
 import 'package:developer_count_up_app/constants/style_constant.dart';
 import 'package:developer_count_up_app/extension/deviceSize.dart';
 import 'package:developer_count_up_app/preference/shared_preference.dart';
-import 'package:developer_count_up_app/screen/rank_screen.dart';
 import 'package:flutter/material.dart';
 
 class CountScreen extends StatefulWidget {
@@ -73,7 +72,19 @@ class _CountScreenState extends State<CountScreen> {
         child: Column(
           children: <Widget>[
             const Spacer(),
-            Text('$counter', style: StyleConstant.countTextStyle),
+            Container(
+              width: context.screenWidth / 2,
+              height: 70,
+              decoration: BoxDecoration(
+                border: Border.all(color: rankColor, width: 4),
+              ),
+              child: Center(
+                child: Text(
+                  '$counter',
+                  style: StyleConstant.countTextStyle,
+                ),
+              ),
+            ),
             const Spacer(),
             SizedBox(
               width: context.screenWidth / 2.5,
@@ -85,6 +96,10 @@ class _CountScreenState extends State<CountScreen> {
                 onPressed: () {
                   _incrementCounter();
                 },
+                child: Text(
+                  'TAP',
+                  style: StyleConstant.tapLabel,
+                ),
               ),
             ),
             const Spacer(),

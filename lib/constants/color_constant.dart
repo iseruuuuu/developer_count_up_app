@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class ColorConstant {
   static Color appBarColor = const Color(0xFF4A67AD);
   static Color backgroundColor = const Color(0xFFFFFFFF);
+  static Color white = Colors.white;
 
   //AtCoderのランク順にする。
   static Color red = Colors.red;

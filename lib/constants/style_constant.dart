@@ -20,4 +20,10 @@ class StyleConstant {
     fontSize: 25,
     color: ColorConstant.black,
   );
+
+  static TextStyle tapLabel = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 25,
+    color: ColorConstant.white,
+  );
 }
