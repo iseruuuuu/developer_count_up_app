@@ -66,16 +66,17 @@ class _TabScreenState extends State<TabScreen> {
         RankScreen(counter: counter, rankColor: rankColor),
       ][selectedIndex],
       bottomNavigationBar: DecoratedBox(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           border: Border(
             top: BorderSide(
               width: 0,
-              color: Colors.white,
+              color: rankColor,
             ),
           ),
         ),
         child: BottomNavigationBar(
           elevation: 0,
+          backgroundColor: ColorConstant.backgroundColor,
           selectedItemColor: ColorConstant.black,
           unselectedItemColor: ColorConstant.grey,
           iconSize: 30,
