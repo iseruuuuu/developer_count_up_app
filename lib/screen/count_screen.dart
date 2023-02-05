@@ -73,10 +73,11 @@ class _CountScreenState extends State<CountScreen> {
           children: <Widget>[
             const Spacer(),
             Container(
-              width: context.screenWidth / 2,
+              width: context.screenWidth / 1.5,
               height: 70,
               decoration: BoxDecoration(
                 border: Border.all(color: rankColor, width: 4),
+                borderRadius: BorderRadius.circular(20),
               ),
               child: Center(
                 child: Text(
@@ -86,19 +87,25 @@ class _CountScreenState extends State<CountScreen> {
               ),
             ),
             const Spacer(),
-            SizedBox(
-              width: context.screenWidth / 2.5,
-              height: context.screenWidth / 2.5,
-              child: FloatingActionButton(
-                focusColor: rankColor,
-                backgroundColor: rankColor,
-                foregroundColor: rankColor,
-                onPressed: () {
-                  _incrementCounter();
-                },
-                child: Text(
-                  'TAP',
-                  style: StyleConstant.tapLabel,
+            Container(
+              width: context.screenWidth / 1.5,
+              height: context.screenWidth / 1.5,
+              decoration: BoxDecoration(
+                border: Border.all(color: rankColor, width: 4),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: FloatingActionButton(
+                  focusColor: rankColor,
+                  backgroundColor: rankColor,
+                  foregroundColor: rankColor,
+                  onPressed: () {
+                    _incrementCounter();
+                  },
+                  child: Text(
+                    'TAP',
+                    style: StyleConstant.tapLabel,
+                  ),
                 ),
               ),
             ),
