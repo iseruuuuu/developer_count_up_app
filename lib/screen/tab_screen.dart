@@ -29,6 +29,7 @@ class _TabScreenState extends State<TabScreen> {
 
   void onTap(int index) {
     selectedIndex = index;
+    checkColor();
     setState(() {});
   }
 
