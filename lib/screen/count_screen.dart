@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:developer_count_up_app/constants/color_constant.dart';
 import 'package:developer_count_up_app/constants/style_constant.dart';
 import 'package:developer_count_up_app/extension/deviceSize.dart';
@@ -14,6 +16,7 @@ class CountScreen extends StatefulWidget {
 class _CountScreenState extends State<CountScreen> {
   int counter = 0;
   Color rankColor = ColorConstant.black;
+  double width = 262;
 
   @override
   void initState() {
@@ -25,6 +28,14 @@ class _CountScreenState extends State<CountScreen> {
     counter++;
     checkColor();
     setPreference();
+    changeSize();
+    setState(() {});
+  }
+
+  void changeSize() async {
+    width = 240;
+    await Future.delayed(const Duration(seconds: 1));
+    width = 262;
     setState(() {});
   }
 
@@ -87,9 +98,10 @@ class _CountScreenState extends State<CountScreen> {
               ),
             ),
             const Spacer(),
-            Container(
-              width: context.screenWidth / 1.5,
-              height: context.screenWidth / 1.5,
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 100),
+              width: width,
+              height: width,
               decoration: BoxDecoration(
                 border: Border.all(color: rankColor, width: 4),
               ),

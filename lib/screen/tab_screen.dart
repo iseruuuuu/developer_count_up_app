@@ -21,6 +21,8 @@ class _TabScreenState extends State<TabScreen> {
   int counter = 0;
   Color rankColor = ColorConstant.black;
 
+  double width = 100;
+
   @override
   void initState() {
     super.initState();
