@@ -33,8 +33,8 @@ class _CountScreenState extends State<CountScreen> {
   }
 
   void changeSize() async {
-    width = 240;
-    await Future.delayed(const Duration(seconds: 1));
+    width = 250;
+    await Future.delayed(const Duration(milliseconds: 100));
     width = 262;
     setState(() {});
   }
