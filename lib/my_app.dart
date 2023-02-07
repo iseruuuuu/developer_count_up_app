@@ -1,5 +1,4 @@
 // Flutter imports:
-import 'package:developer_count_up_app/screen/count_screen.dart';
 import 'package:developer_count_up_app/screen/tab_screen.dart';
 import 'package:flutter/material.dart';
 
