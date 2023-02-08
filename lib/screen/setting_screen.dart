@@ -27,6 +27,7 @@ class _SettingScreenState extends State<SettingScreen> {
       backgroundColor: ColorConstant.backgroundColor,
       appBar: AppBar(
         backgroundColor: widget.rankColor,
+        elevation: 0,
       ),
       body: Column(
         children: [
@@ -47,6 +48,7 @@ class _SettingScreenState extends State<SettingScreen> {
                       ),
                       title: const Text('レビューを書く'),
                       onPressed: (context) async {
+                        //TODO エラーが出ているかも
                         await EasyLoading.show(status: 'loading....');
                         await Future.delayed(const Duration(seconds: 2));
                         final inAppReview = InAppReview.instance;
