@@ -26,4 +26,10 @@ class StyleConstant {
     fontSize: 25,
     color: ColorConstant.white,
   );
+
+  static TextStyle appBarTitle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 10,
+    color: ColorConstant.white,
+  );
 }

@@ -5,6 +5,8 @@ class ColorConstant {
   static Color appBarColor = const Color(0xFF4A67AD);
   static Color backgroundColor = const Color(0xFFFFFFFF);
   static Color white = Colors.white;
+  static Color settingsListBackground = const Color(0xFFF2F2F7);
+  static Color settingsSectionBackground = Colors.white;
 
   //AtCoderのランク順にする。
   static Color red = Colors.red;

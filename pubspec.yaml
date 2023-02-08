@@ -10,12 +10,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.2
 
   #preferences
   shared_preferences: ^2.0.8
   enum_to_string: ^2.0.1
+
+  #setting
+  settings_ui: ^2.0.2
+  in_app_review: ^2.0.6
+  url_launcher: ^6.1.7
+  share: ^2.0.4
+  flutter_vector_icons: ^2.0.0
+  flutter_easyloading: ^3.0.5
 
 dev_dependencies:
   flutter_test:
