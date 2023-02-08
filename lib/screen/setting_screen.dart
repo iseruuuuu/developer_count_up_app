@@ -126,11 +126,11 @@ class _SettingScreenState extends State<SettingScreen> {
                       onPressed: (context) {
                         if (Platform.isAndroid) {
                           Share.share(
-                            'https://play.google.com/store/apps/details?id=com.work_record_app',
+                            'https://play.google.com/store/apps/details?id=com.developer_count_up_app',
                           );
                         } else {
                           Share.share(
-                            'https://apps.apple.com/jp/app/%E7%A7%92%E7%B5%A6%E3%82%BF%E3%82%A4%E3%83%9E%E3%83%BC/id1669494153',
+                            '',
                           );
                         }
                       },
