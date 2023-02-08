@@ -90,17 +90,14 @@ class _TabScreenState extends State<TabScreen> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.add_circle),
-              //TODO 多言語にする
               label: 'Counter',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.account_balance_wallet),
-              //TODO 多言語にする
               label: 'Check Rank',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              //TODO 多言語にする
               label: 'Setting',
             ),
           ],

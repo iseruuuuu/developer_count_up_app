@@ -46,10 +46,8 @@ class _SettingScreenState extends State<SettingScreen> {
                         Icons.star,
                         color: ColorConstant.yellow,
                       ),
-                      //TODO 多言語にする
                       title: const Text('レビューを書く'),
                       onPressed: (context) async {
-                        //TODO エラーが出ているかも
                         await EasyLoading.show(status: 'loading....');
                         await Future.delayed(const Duration(seconds: 2));
                         final inAppReview = InAppReview.instance;
@@ -64,7 +62,6 @@ class _SettingScreenState extends State<SettingScreen> {
                         Icons.mail,
                         color: ColorConstant.lightBlue,
                       ),
-                      //TODO 多言語にする
                       title: const Text('お問い合わせ'),
                       onPressed: (context) async {
                         final url =
@@ -79,7 +76,6 @@ class _SettingScreenState extends State<SettingScreen> {
                         AntDesign.twitter,
                         color: ColorConstant.blue,
                       ),
-                      //TODO 多言語にする
                       title: const Text('開発者'),
                       onPressed: (context) async {
                         final url =
@@ -98,7 +94,6 @@ class _SettingScreenState extends State<SettingScreen> {
                         Icons.local_police,
                         color: ColorConstant.grey,
                       ),
-                      //TODO 多言語にする
                       title: const Text('ライセンス'),
                       onPressed: (context) {
                         Navigator.push(
@@ -114,7 +109,6 @@ class _SettingScreenState extends State<SettingScreen> {
                         MaterialCommunityIcons.github,
                         color: ColorConstant.black,
                       ),
-                      //TODO 多言語にする
                       title: const Text('Github'),
                       onPressed: (context) async {
                         final Uri url = Uri.parse(
@@ -129,7 +123,6 @@ class _SettingScreenState extends State<SettingScreen> {
                         AntDesign.sharealt,
                         color: ColorConstant.black,
                       ),
-                      //TODO 多言語にする
                       title: const Text('友達に教える'),
                       onPressed: (context) {
                         if (Platform.isAndroid) {
