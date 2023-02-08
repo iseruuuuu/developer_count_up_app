@@ -62,9 +62,8 @@ class _SettingScreenState extends State<SettingScreen> {
                       ),
                       title: const Text('お問い合わせ'),
                       onPressed: (context) async {
-                        //TODO formsをあとで変更する。
                         final url =
-                            Uri.parse('https://forms.gle/rfnKQfemq4rwrjYr5');
+                            Uri.parse('https://forms.gle/HLS9FbRo2YcWDHev5');
                         if (!await launchUrl(url)) {
                           throw 'Could not launch $url';
                         }
