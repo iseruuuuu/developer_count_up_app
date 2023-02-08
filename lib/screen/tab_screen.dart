@@ -3,6 +3,7 @@ import 'package:developer_count_up_app/constants/color_constant.dart';
 import 'package:developer_count_up_app/preference/shared_preference.dart';
 import 'package:developer_count_up_app/screen/count_screen.dart';
 import 'package:developer_count_up_app/screen/rank_screen.dart';
+import 'package:developer_count_up_app/screen/setting_screen.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -67,6 +68,7 @@ class _TabScreenState extends State<TabScreen> {
       body: [
         const CountScreen(),
         RankScreen(counter: counter, rankColor: rankColor),
+        SettingScreen(rankColor: rankColor),
       ][selectedIndex],
       bottomNavigationBar: DecoratedBox(
         decoration: BoxDecoration(
@@ -88,11 +90,18 @@ class _TabScreenState extends State<TabScreen> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.add_circle),
+              //TODO 多言語にする
               label: 'Counter',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.account_balance_wallet),
+              //TODO 多言語にする
               label: 'Check Rank',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              //TODO 多言語にする
+              label: 'Setting',
             ),
           ],
           type: BottomNavigationBarType.fixed,
