@@ -6,6 +6,7 @@ import 'package:in_app_review/in_app_review.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:io' show Platform;
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({
@@ -123,11 +124,15 @@ class _SettingScreenState extends State<SettingScreen> {
                       ),
                       title: const Text('友達に教える'),
                       onPressed: (context) {
-                        //TODO urlを変える。
-                        //TODO iOS/Androidの条件分岐を追加する
-                        Share.share(
-                          'https://apps.apple.com/jp/app/%E5%AE%B6%E8%A8%88%E7%B0%BF-%E7%AF%80%E7%B4%84%E8%A8%98%E9%8C%B2/id1660345986',
-                        );
+                        if (Platform.isAndroid) {
+                          Share.share(
+                            'https://play.google.com/store/apps/details?id=com.work_record_app',
+                          );
+                        } else {
+                          Share.share(
+                            'https://apps.apple.com/jp/app/%E7%A7%92%E7%B5%A6%E3%82%BF%E3%82%A4%E3%83%9E%E3%83%BC/id1669494153',
+                          );
+                        }
                       },
                     ),
                   ],
