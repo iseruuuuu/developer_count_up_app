@@ -109,9 +109,8 @@ class _SettingScreenState extends State<SettingScreen> {
                       ),
                       title: const Text('Github'),
                       onPressed: (context) async {
-                        //TODO urlを変更する
-                        final Uri url =
-                            Uri.parse('https://github.com/iseruuuuu');
+                        final Uri url = Uri.parse(
+                            'https://github.com/iseruuuuu/working_money_timer_app');
                         if (!await launchUrl(url)) {
                           throw 'Could not launch $url';
                         }
